@@ -1,0 +1,66 @@
+ 📘 Project Overview
+This project analyzes **Blinkit's grocery sales data** to understand key performance metrics, sales trends, and operational efficiency.  
+Blinkit is a leading **quick-commerce platform** in India that delivers groceries and essentials within minutes using a hyperlocal, dark-store model.
+
+The purpose of this dashboard/report is to provide insights into:
+- Overall sales performance and category-wise revenue
+- Customer behavior and order patterns
+- Delivery efficiency and fulfillment metrics
+- Profitability and operational trends
+
+---
+
+ 🎯 Objectives
+- Analyze **total sales, profit, and orders** across time, category, and location.
+- Identify **top-performing and underperforming product categories**.
+- Understand **customer demand trends** and order frequency.
+- Evaluate **delivery performance**, including time efficiency and order success rate.
+- Provide **data-driven recommendations** to optimize sales and supply chain.
+
+---
+ 📊 Key Metrics (Power BI / Excel Dashboard)
+| Metric | Description |
+|---------|--------------|
+| **Total Sales** | Sum of all revenue generated from orders |
+| **Average Order Value (AOV)** | Average value of each order |
+| **Total Orders** | Number of orders completed within the period |
+| **Gross Margin** | Profitability after considering cost of goods sold |
+| **Delivery Time** | Average time taken to deliver an order |
+| **Customer Retention Rate** | Percentage of repeat customers |
+| **Top 5 Products / Categories** | Highest-selling SKUs and categories |
+| **Sales by Location** | Revenue distribution across cities or stores |
+
+---
+
+🧠 Insights & Findings
+- **Fruits & Vegetables** and **Dairy Products** generate the highest sales volume.
+- **Evening hours (6–10 PM)** see peak order activity.
+- **Delivery efficiency** is directly correlated with higher customer ratings.
+- **High-frequency customers** contribute a significant share of total revenue.
+- **Seasonal sales spikes** occur during festivals and weekends.
+- Certain **zones show low profitability** due to higher logistics costs.
+
+---
+
+ ⚙️ Tools & Technologies
+- **Power BI** – for interactive dashboard & DAX measures  
+- **Excel / CSV Data** – raw sales and delivery data  
+- **SQL / Python (optional)** – for data cleaning and preprocessing  
+- **DAX / Measures** – to calculate KPIs and performance ratios  
+
+---
+
+ 🧮 Sample DAX Measures (Power BI)
+```DAX
+Total Sales = SUM(Sales[Amount])
+
+Total Orders = COUNT(Sales[Order ID])
+
+Average Order Value = [Total Sales] / [Total Orders]
+
+Profit Margin % = DIVIDE(SUM(Sales[Profit]), SUM(Sales[Amount]), 0)
+
+Repeat Customer Rate = DIVIDE(
+    CALCULATE(DISTINCTCOUNT(Sales[Customer ID]), Sales[Order Count] > 1),
+    DISTINCTCOUNT(Sales[Customer ID])
+)
